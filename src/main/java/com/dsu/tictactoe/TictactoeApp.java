@@ -7,9 +7,9 @@ public class TictactoeApp {
     private Tictactoe tictactoe;
     private TictacToeController tictacToeController;
     
-    public TictactoeApp(){
+    public TictactoeApp(int view){
         tictactoe = new Tictactoe();
-        tictacToeController = new TictacToeController(tictactoe);
+        tictacToeController = new TictacToeController(tictactoe, view);
     }
 
     public void runGame(){

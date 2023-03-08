@@ -13,5 +13,4 @@ public interface ViewsFactory {
     public BoardViewInterface createBoardView();
     public PlayerViewInterface createPlayerView(PlayerType type);
     public PlayerManagerViewInterface createPlayerManagerView();
-
 }
