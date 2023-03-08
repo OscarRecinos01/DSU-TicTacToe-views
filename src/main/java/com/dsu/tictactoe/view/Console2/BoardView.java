@@ -1,12 +1,10 @@
-package com.dsu.tictactoe.view;
+package com.dsu.tictactoe.view.Console2;
 
 import com.dsu.tictactoe.model.board.Mark;
 import com.dsu.tictactoe.utils.Console;
-import com.dsu.tictactoe.view.viewAbstractFactory.viewsInterface.BoardViewInterface;
 
-public class BoardView implements BoardViewInterface{
+public class BoardView {
 
-    @Override
     public void showBoard(Mark[][] matrixMarks) {
         String firstSpace = "    ";
         String header =  "y/x "+"0|1|2";

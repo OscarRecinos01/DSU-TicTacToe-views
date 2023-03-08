@@ -1,19 +1,17 @@
-package com.dsu.tictactoe.view.player;
+package com.dsu.tictactoe.view.Console2.player;
 
 import com.dsu.tictactoe.model.board.Coordinate;
 import com.dsu.tictactoe.model.board.PutMarkError;
 import com.dsu.tictactoe.model.player.Player;
 import com.dsu.tictactoe.utils.Console;
-import com.dsu.tictactoe.view.viewAbstractFactory.viewsInterface.playerViewInterface.PlayerViewInterface;
 
-public abstract class PlayerView implements PlayerViewInterface{
+public abstract class PlayerView {
 
 
     /**
      * For this reason we create the PutMarkError
      * To avoid code of this type
      */
-    @Override
     public Player getPlayer(String errorMessage, String numberPlayer) {
         if (errorMessage!=null){
             Console.printLine(errorMessage);
@@ -30,10 +28,8 @@ public abstract class PlayerView implements PlayerViewInterface{
         return new Player(name);
     }
 
-    @Override
     public abstract String getName(String message);
 
-    @Override
     public abstract Coordinate getCoordinate( PutMarkError putMarkError);
 
 

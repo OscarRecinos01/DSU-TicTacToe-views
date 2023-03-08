@@ -1,4 +1,4 @@
-package com.dsu.tictactoe.view.player;
+package com.dsu.tictactoe.view.Console2.player;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -8,12 +8,11 @@ import com.dsu.tictactoe.model.player.Player;
 import com.dsu.tictactoe.model.player.PlayerError;
 import com.dsu.tictactoe.model.player.PlayerType;
 import com.dsu.tictactoe.utils.Console;
-import com.dsu.tictactoe.view.viewAbstractFactory.viewsInterface.playerViewInterface.PlayerManagerViewInterface;
 
-public class PlayerManagerView implements PlayerManagerViewInterface{
+public class PlayerManagerView {
 
     
-    @Override
+
     public Player getNewPlayer(PlayerError playerError, Player newPlayer, PlayerType[] playerTypevalues) {
         if (PlayerError.NO_ERROR != playerError) {
             Console.printLine("Error: " + playerError.getDescription());
@@ -41,7 +40,6 @@ public class PlayerManagerView implements PlayerManagerViewInterface{
         return player;
     }
 
-    @Override
     public List<Player> getNewGamePlayers(List<Player> allPlayers, int numbePlayers) {
         ArrayList<Player> allNewGamePlayers = getArrayListPlayers(allPlayers);
         List<Player> selectedPlayers = new LinkedList<>();
@@ -76,7 +74,6 @@ public class PlayerManagerView implements PlayerManagerViewInterface{
         }
     }
 
-    @Override
     public void showAllPlayers(List<Player> players) {
         Console.printTitle("Registered players");
         printAllPlayers(players);
