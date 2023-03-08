@@ -1,4 +1,4 @@
-package com.dsu.tictactoe.view.player;
+package com.dsu.tictactoe.view.Console1.player;
 
 import com.dsu.tictactoe.model.board.Coordinate;
 import com.dsu.tictactoe.model.board.PutMarkError;
@@ -6,7 +6,7 @@ import com.dsu.tictactoe.model.player.Player;
 import com.dsu.tictactoe.utils.Console;
 import com.dsu.tictactoe.view.viewAbstractFactory.viewsInterface.playerViewInterface.PlayerViewInterface;
 
-public abstract class PlayerView implements PlayerViewInterface{
+public abstract class PlayerViewConsole1 implements PlayerViewInterface{
 
 
     /**

@@ -6,13 +6,13 @@ import com.dsu.tictactoe.model.board.Coordinate;
 import com.dsu.tictactoe.model.board.Mark;
 import com.dsu.tictactoe.model.board.PutMarkError;
 import com.dsu.tictactoe.model.player.PlayerType;
-import com.dsu.tictactoe.view.player.ComputerPlayerView;
-import com.dsu.tictactoe.view.player.PlayerView;
+import com.dsu.tictactoe.view.Console1.player.ComputerPlayerView;
+import com.dsu.tictactoe.view.Console1.player.PlayerViewConsole1;
 
 public class ComputerPlayerController extends PlayerController {
 
     @Override
-    protected PlayerView initPlayerView() {
+    protected PlayerViewConsole1 initPlayerView() {
         return new ComputerPlayerView();
     }
 

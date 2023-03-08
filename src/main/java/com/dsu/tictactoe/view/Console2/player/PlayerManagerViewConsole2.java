@@ -8,11 +8,11 @@ import com.dsu.tictactoe.model.player.Player;
 import com.dsu.tictactoe.model.player.PlayerError;
 import com.dsu.tictactoe.model.player.PlayerType;
 import com.dsu.tictactoe.utils.Console;
+import com.dsu.tictactoe.view.viewAbstractFactory.viewsInterface.playerViewInterface.PlayerManagerViewInterface;
 
-public class PlayerManagerView {
+public class PlayerManagerViewConsole2 implements PlayerManagerViewInterface{
 
-    
-
+    @Override
     public Player getNewPlayer(PlayerError playerError, Player newPlayer, PlayerType[] playerTypevalues) {
         if (PlayerError.NO_ERROR != playerError) {
             Console.printLine("Error: " + playerError.getDescription());
@@ -32,7 +32,7 @@ public class PlayerManagerView {
             }
             playerType = PlayerType.getPlayerType(Console.readInt("Select the type: "));
         } while (playerType == null);
-        PlayerView newPlayerView = PlayerViewFactory.getPlayerView(playerType);
+        PlayerViewConsole2 newPlayerView = PlayerViewFactory.getPlayerView(playerType);
         String name = newPlayerView.getName("Name for the new player: ");
 
         Player player = new Player(name);
@@ -40,6 +40,7 @@ public class PlayerManagerView {
         return player;
     }
 
+    @Override
     public List<Player> getNewGamePlayers(List<Player> allPlayers, int numbePlayers) {
         ArrayList<Player> allNewGamePlayers = getArrayListPlayers(allPlayers);
         List<Player> selectedPlayers = new LinkedList<>();
@@ -74,6 +75,7 @@ public class PlayerManagerView {
         }
     }
 
+    @Override
     public void showAllPlayers(List<Player> players) {
         Console.printTitle("Registered players");
         printAllPlayers(players);

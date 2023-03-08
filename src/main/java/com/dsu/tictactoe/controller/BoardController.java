@@ -5,15 +5,15 @@ import com.dsu.tictactoe.model.board.Coordinate;
 import com.dsu.tictactoe.model.board.Mark;
 import com.dsu.tictactoe.model.board.PutMarkError;
 import com.dsu.tictactoe.model.board.TTTLine;
-import com.dsu.tictactoe.view.BoardView;
+import com.dsu.tictactoe.view.Console1.BoardViewConsole1;
 
 public class BoardController implements ReadyToPlay {
 
     private Board board;
-    private BoardView boardView;
+    private BoardViewConsole1 boardView;
 
     public BoardController() {
-        this.boardView = new BoardView();
+        this.boardView = new BoardViewConsole1();
     }
 
 

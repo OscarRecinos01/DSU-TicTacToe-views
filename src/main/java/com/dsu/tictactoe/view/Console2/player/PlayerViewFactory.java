@@ -4,7 +4,7 @@ import com.dsu.tictactoe.model.player.PlayerType;
 
 public class PlayerViewFactory {
 
-    public static PlayerView getPlayerView(PlayerType playerType){
+    public static PlayerViewConsole2 getPlayerView(PlayerType playerType){
         assert(playerType != null);
         switch (playerType) {
             case HUMAN:

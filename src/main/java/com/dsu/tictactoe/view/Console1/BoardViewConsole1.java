@@ -1,10 +1,10 @@
-package com.dsu.tictactoe.view;
+package com.dsu.tictactoe.view.Console1;
 
 import com.dsu.tictactoe.model.board.Mark;
 import com.dsu.tictactoe.utils.Console;
 import com.dsu.tictactoe.view.viewAbstractFactory.viewsInterface.BoardViewInterface;
 
-public class BoardView implements BoardViewInterface{
+public class BoardViewConsole1 implements BoardViewInterface{
 
     @Override
     public void showBoard(Mark[][] matrixMarks) {

@@ -1,10 +1,10 @@
-package com.dsu.tictactoe.view;
+package com.dsu.tictactoe.view.Console1;
 
 import com.dsu.tictactoe.model.Result;
 import com.dsu.tictactoe.utils.Console;
 import com.dsu.tictactoe.view.viewAbstractFactory.viewsInterface.TicTacToeViewInterface;
 
-public class TicTacToeView implements  TicTacToeViewInterface{
+public class TicTacToeViewConsole1 implements  TicTacToeViewInterface{
 
     @Override
     public void showInstruccions() {

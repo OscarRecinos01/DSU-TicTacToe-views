@@ -8,5 +8,4 @@ public interface PlayerViewInterface {
     public Player getPlayer(String errorMessage, String numberPlayer);
     public abstract String getName(String message);
     public abstract Coordinate getCoordinate( PutMarkError putMarkError);
-    
 }

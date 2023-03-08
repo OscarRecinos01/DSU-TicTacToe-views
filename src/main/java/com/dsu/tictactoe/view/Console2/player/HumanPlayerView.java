@@ -4,7 +4,7 @@ import com.dsu.tictactoe.model.board.Coordinate;
 import com.dsu.tictactoe.model.board.PutMarkError;
 import com.dsu.tictactoe.utils.Console;
 
-public class HumanPlayerView extends PlayerView {
+public class HumanPlayerView extends PlayerViewConsole2 {
 
     @Override
     public String getName( String message) {
