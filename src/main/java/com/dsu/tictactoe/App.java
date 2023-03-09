@@ -8,6 +8,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        new TictactoeApp(1).runGame();
+        System.out.println("Que idioma quieres utilizar : \n 1.Espanol \n 2.Ingles");
+        new TictactoeApp(2).runGame();
     }
 }

@@ -8,7 +8,9 @@ import com.dsu.tictactoe.model.player.Player;
 import com.dsu.tictactoe.model.player.PlayerError;
 import com.dsu.tictactoe.model.player.PlayerType;
 import com.dsu.tictactoe.utils.Console;
+import com.dsu.tictactoe.view.viewAbstractFactory.abstractFactory.AbstractFactorySingleton;
 import com.dsu.tictactoe.view.viewAbstractFactory.viewsInterface.playerViewInterface.PlayerManagerViewInterface;
+import com.dsu.tictactoe.view.viewAbstractFactory.viewsInterface.playerViewInterface.PlayerViewInterface;
 
 public class PlayerManagerViewConsole2 implements PlayerManagerViewInterface{
 
@@ -32,7 +34,7 @@ public class PlayerManagerViewConsole2 implements PlayerManagerViewInterface{
             }
             playerType = PlayerType.getPlayerType(Console.readInt("Select the type: "));
         } while (playerType == null);
-        PlayerViewConsole2 newPlayerView = PlayerViewFactory.getPlayerView(playerType);
+        PlayerViewInterface newPlayerView = AbstractFactorySingleton.getInstance().createPlayerView(playerType);
         String name = newPlayerView.getName("Name for the new player: ");
 
         Player player = new Player(name);

@@ -6,18 +6,19 @@ import com.dsu.tictactoe.model.board.Coordinate;
 import com.dsu.tictactoe.model.board.Mark;
 import com.dsu.tictactoe.model.board.PutMarkError;
 import com.dsu.tictactoe.model.player.Player;
-import com.dsu.tictactoe.view.Console1.TurnViewConsole1;
+import com.dsu.tictactoe.view.viewAbstractFactory.abstractFactory.AbstractFactorySingleton;
+import com.dsu.tictactoe.view.viewAbstractFactory.viewsInterface.TurnViewInterface;
 import com.dsu.tictactoe.controller.player.PlayerController;
 
 public class TurnController implements ReadyToPlay {
 
     private BoardController boardController;
     private PlayerController[] playersController;
-    private TurnViewConsole1 turnView;
+    private TurnViewInterface turnView;
     private Turn turn;
 
     public TurnController(){
-        turnView = new TurnViewConsole1();
+        turnView = AbstractFactorySingleton.getInstance().createTurnView();
     }
 
     

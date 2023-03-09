@@ -8,26 +8,26 @@ public class ComputerPlayerView extends PlayerViewConsole1 {
 
     @Override
     public String getName( String message) {
-        Console.readString("Thinking the name, press enter please . . . ");
+        Console.readString("Pensando, presiona enter. . . ");
         String name = ComputerPlayerView.getAlphaNumericString(10);
-        Console.readString("The name is "+name+" and means nothin xD. Enter to continue. . .");
+        Console.readString("Su nombre es "+name+" presiona enter para continuar. . .");
         return name ;
     }
 
     @Override
     public Coordinate getCoordinate(PutMarkError putMarkError) {
         if (putMarkError!= PutMarkError.NOT_ERROR){
-            Console.printLine("Oh no!, an error :P");
+            Console.printLine("Oh no!, un error :P");
         }
         return null;
     }
 
     public void turnFinish(){
-        Console.readString("Enter to continue . . . ");
+        Console.readString("Presiona enter para continuar . . . ");
     }
 
     public void showThinkingAboutTheCoordinate(int x, int y ){
-        Console.printLine("My possible coordinate is: x"+x+" y: "+y);
+        Console.printLine("Mi coordenada es is: x"+x+" y: "+y);
     }
 
 

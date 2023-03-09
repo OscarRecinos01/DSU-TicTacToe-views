@@ -13,7 +13,7 @@ public class HumanPlayerView extends PlayerViewConsole1 {
 
     @Override
     public Coordinate getCoordinate(PutMarkError putMarkError) {
-        return new Coordinate(Console.readInt("Input coordinate x:"), Console.readInt("Input coordinate y:"));
+        return new Coordinate(Console.readInt("Ingresa coordenada x:"), Console.readInt("Ingresa coordenada y:"));
     }
     
 }

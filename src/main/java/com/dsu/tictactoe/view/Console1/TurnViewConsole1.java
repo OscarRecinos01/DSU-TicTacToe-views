@@ -10,9 +10,9 @@ public class TurnViewConsole1 implements TurnViewInterface{
     @Override
     public void playerTurn(Mark turnMark, PutMarkError putMarkError, String playerName) {
         Console.printWhiteLine();
-        Console.printTitle("Player Turn: "+turnMark.toString()+" - "+playerName);
+        Console.printTitle("Turno del jugador: "+turnMark.toString()+" - "+playerName);
         if (putMarkError != PutMarkError.NOT_ERROR){
-            Console.printLine("Input error: "+putMarkError.getErrorDescription());
+            Console.printLine("Error de insercion: "+putMarkError.getErrorDescription());
         }
     }
 

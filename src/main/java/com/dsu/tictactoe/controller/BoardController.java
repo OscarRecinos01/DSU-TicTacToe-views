@@ -5,15 +5,16 @@ import com.dsu.tictactoe.model.board.Coordinate;
 import com.dsu.tictactoe.model.board.Mark;
 import com.dsu.tictactoe.model.board.PutMarkError;
 import com.dsu.tictactoe.model.board.TTTLine;
-import com.dsu.tictactoe.view.Console1.BoardViewConsole1;
+import com.dsu.tictactoe.view.viewAbstractFactory.abstractFactory.AbstractFactorySingleton;
+import com.dsu.tictactoe.view.viewAbstractFactory.viewsInterface.BoardViewInterface;
 
 public class BoardController implements ReadyToPlay {
 
     private Board board;
-    private BoardViewConsole1 boardView;
+    private BoardViewInterface boardView;
 
     public BoardController() {
-        this.boardView = new BoardViewConsole1();
+        this.boardView = AbstractFactorySingleton.getInstance().createBoardView();
     }
 
 

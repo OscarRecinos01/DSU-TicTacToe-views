@@ -26,9 +26,10 @@ public class AbstractFactorySingleton{
                 break;
         
             default:
+                //Exception
+                System.out.println("HUBO UN ERROR CREANDO LA FACTORY DE VISTAS");
                 break;
         }
-
     }
 
 

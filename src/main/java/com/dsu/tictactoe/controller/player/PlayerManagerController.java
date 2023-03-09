@@ -6,14 +6,16 @@ import com.dsu.tictactoe.model.player.Player;
 import com.dsu.tictactoe.model.player.PlayerError;
 import com.dsu.tictactoe.model.player.PlayerType;
 import com.dsu.tictactoe.view.Console1.player.PlayerManagerViewConsole1;
+import com.dsu.tictactoe.view.viewAbstractFactory.abstractFactory.AbstractFactorySingleton;
+import com.dsu.tictactoe.view.viewAbstractFactory.viewsInterface.playerViewInterface.PlayerManagerViewInterface;
 
 public class PlayerManagerController {
 
     private List<Player> players;
-    private PlayerManagerViewConsole1 playerManagerView;
+    private PlayerManagerViewInterface playerManagerView;
 
     public PlayerManagerController(List<Player> players) {
-        playerManagerView = new PlayerManagerViewConsole1();
+        playerManagerView = AbstractFactorySingleton.getInstance().createPlayerManagerView();
         this.players = players;
     }
 

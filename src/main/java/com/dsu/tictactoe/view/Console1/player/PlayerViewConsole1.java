@@ -20,11 +20,11 @@ public abstract class PlayerViewConsole1 implements PlayerViewInterface{
         }
         String name = "";
         do {
-            name = getName( "Name of "+numberPlayer+" the player:");
+            name = getName( "Nombre : "+numberPlayer+" El jugador:");
             //Console.readString("Name of "+numberPlayer+" the player:")
             name = name.trim();
             if (name.length()==0){
-                errorMessage = "Invalid username, enter again.";;
+                errorMessage = "Usuario invalido, ingrese de nuevo";;
             }
         } while (name.length()==0);
         return new Player(name);

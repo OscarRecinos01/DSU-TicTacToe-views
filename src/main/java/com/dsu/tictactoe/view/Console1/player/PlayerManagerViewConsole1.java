@@ -8,7 +8,9 @@ import com.dsu.tictactoe.model.player.Player;
 import com.dsu.tictactoe.model.player.PlayerError;
 import com.dsu.tictactoe.model.player.PlayerType;
 import com.dsu.tictactoe.utils.Console;
+import com.dsu.tictactoe.view.viewAbstractFactory.abstractFactory.AbstractFactorySingleton;
 import com.dsu.tictactoe.view.viewAbstractFactory.viewsInterface.playerViewInterface.PlayerManagerViewInterface;
+import com.dsu.tictactoe.view.viewAbstractFactory.viewsInterface.playerViewInterface.PlayerViewInterface;
 
 public class PlayerManagerViewConsole1 implements PlayerManagerViewInterface{
 
@@ -19,22 +21,22 @@ public class PlayerManagerViewConsole1 implements PlayerManagerViewInterface{
             Console.printLine("Error: " + playerError.getDescription());
             if (newPlayer != null) {
                 Console.printLine("     " + newPlayer.toString());
-                Console.printLine("Create another player.\n");
+                Console.printLine("Crear otro jugador.\n");
             }
         }
         PlayerType playerType;
-        Console.printTitle("New player");
+        Console.printTitle("Nuevo jugador");
 
         do {
             Console.printWhiteLine();
-            Console.printLine("Select the player type: ");
+            Console.printLine("Selecciona su tipo: ");
             for (int i = 0; i < playerTypevalues.length; i++) {
                 Console.printLine(i + ") " + playerTypevalues[i].name().toLowerCase());
             }
-            playerType = PlayerType.getPlayerType(Console.readInt("Select the type: "));
+            playerType = PlayerType.getPlayerType(Console.readInt("Selecciona su tipo: "));
         } while (playerType == null);
-        PlayerViewConsole1 newPlayerView = PlayerViewFactory.getPlayerView(playerType);
-        String name = newPlayerView.getName("Name for the new player: ");
+        PlayerViewInterface newPlayerView = AbstractFactorySingleton.getInstance().createPlayerView(playerType);
+        String name = newPlayerView.getName("Nombre del jugador nuevo: ");
 
         Player player = new Player(name);
         player.setPlayerType(playerType);
@@ -47,9 +49,9 @@ public class PlayerManagerViewConsole1 implements PlayerManagerViewInterface{
         List<Player> selectedPlayers = new LinkedList<>();
         int numberSelected = 0;
         do {
-            Console.printTitle("Select the " + (selectedPlayers.size() + 1));
+            Console.printTitle("Selecciona el " + (selectedPlayers.size() + 1));
             printAllPlayers(allNewGamePlayers);
-            numberSelected = Console.readInt("Select the player you want to use?");
+            numberSelected = Console.readInt("Seleccina el jugaro qeu quieres usar?");
             if (numberSelected >= 0 && numberSelected < allNewGamePlayers.size()) {
                 selectedPlayers.add(allNewGamePlayers.get(numberSelected));
                 allNewGamePlayers.remove(numberSelected);
@@ -68,7 +70,7 @@ public class PlayerManagerViewConsole1 implements PlayerManagerViewInterface{
 
     private void printAllPlayers(List<Player> players) {
         if (players.size() == 0) {
-            Console.printTitle("You don't have registered players yet.");
+            Console.printTitle("No tienes ningun jugador registrado aun.");
             return;
         }
         for (int i = 0; i < players.size(); i++) {
@@ -78,10 +80,10 @@ public class PlayerManagerViewConsole1 implements PlayerManagerViewInterface{
 
     @Override
     public void showAllPlayers(List<Player> players) {
-        Console.printTitle("Registered players");
+        Console.printTitle("Jugadores registrados");
         printAllPlayers(players);
         Console.printWhiteLine();
-        Console.readString("Enter to continue");
+        Console.readString("Presiona enter para continuar");
     }
 
 }
